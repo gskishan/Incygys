@@ -14,12 +14,12 @@ def duplicate_check(doc, method):
 
         email_sql = """SELECT * FROM `tabLead` WHERE custom_email = "{0}" """.format(doc.custom_email)
         email_data = frappe.db.sql(email_sql, as_dict=True)
-        frappe.errprint(sql)
-        frappe.errprint(email_sql)
+        # frappe.errprint(sql)
+        # frappe.errprint(email_sql)
 
         if data:
             frappe.errprint(data)
-            frappe.throw(f"Duplicate mobile number {0} already linked to <b>{1}</b>".format(data[0].custom_mobile_numbers,data[0].custom_owner_name))
+            frappe.throw("Duplicate mobile number {0} already linked to <b>{1}</b>".format(data[0].custom_mobile_numbers,data[0].custom_owner_name))
         if email_data:
             frappe.errprint(email_data)
             frappe.throw(f"Duplicate email {doc.custom_email} already linked to <b>{email_data[0].custom_owner_name}</b>")
