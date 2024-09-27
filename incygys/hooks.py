@@ -128,7 +128,7 @@ doc_events = {
 	    "validate": "incygys.custom_script.lead.lead.duplicate_check"
     },
     "Opportunity": {
-	    "validate": "incygys.custom_script.opportunity.opportunity.duplicate_check"
+	"validate": "incygys.custom_script.opportunity.opportunity.duplicate_check"
     },
     "Employee": {
         "after_insert": "incygys.custom_script.leave_allocation.leave_allocation.allocate_leaves_on_employee_creation"
